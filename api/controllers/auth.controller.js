@@ -1,4 +1,4 @@
-import User from "../user.model.js";
+import User from "../models/user.model.js";
 import bcryptjs from 'bcryptjs';
 import { errorHandler } from "../utils/error.js";
 import jwt from 'jsonwebtoken';
@@ -21,7 +21,7 @@ export const signup = async (req,res, next) => {
     try {
         await newUser.save();
         res.json('Signup successful');
-        
+
     } catch (error) {
         next(error); 
         
